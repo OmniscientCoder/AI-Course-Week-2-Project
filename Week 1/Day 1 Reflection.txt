@@ -1,0 +1,4 @@
+Reflection
+I learned that git is awfully difficult when there is a submodule that I am unable to find. 
+It has taken me four hours to push to git.
+Anyway, I also learned that we are in the age of Connectionism III (Deep Learning)

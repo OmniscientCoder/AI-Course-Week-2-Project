@@ -1,0 +1,6 @@
+git checkout --orphan latest_branch
+git add -a
+git commit -am "message"
+git banch -D main
+git branch -m main
+git push -f origin main
