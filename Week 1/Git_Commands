@@ -1,7 +1,0 @@
-# How to resolve fatal: Unable to create '/c/git_repo/.git/index.lock': File exists.
-Go to your git repository directory,
-now type cd .git,
-Now type rm-f index.lock if you are using Linux/macOS
-or type del index.lock if you are using Windows
-Now try your command it should work
-

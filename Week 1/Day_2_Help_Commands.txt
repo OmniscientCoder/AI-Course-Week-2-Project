@@ -1,9 +1,0 @@
-#activating conda; do this in a cmd shell in VS Code
-C:\Users\<username>\miniconda3\scripts>activate base
-
-#open env
-(base) C:\Users\<username>\anaconda3\Scripts>conda env list
-(base) C:\Users\<username>\anaconda3\Scripts>call conda.bat activate <chosen env name>
-
-#run file
-(<env name>) C:\Users\<username>\anaconda3\Scripts>python "C:<PATH>\<FILENAME>
