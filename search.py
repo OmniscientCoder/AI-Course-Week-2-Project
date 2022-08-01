@@ -82,16 +82,51 @@ def depthFirstSearch(problem: SearchProblem):
     To get started, you might want to try some of these simple commands to
     understand the search problem that is being passed in:
     """
-    print("Start:", problem.getStartState())
-    print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
-    print("Start's successors:", problem.getSuccessors(problem.getStartState()))
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    print("Start: ", problem.getStartState())
+    print("Is the start a goal? ", problem.isGoalState(problem.getStartState()))
+    print("Start's successors: ", problem.getSuccessors(problem.getStartState()))
 
+    frontier = util.Stack()
+    frontier.push((problem.getStartState(), [], 0))
+    visited = set()
+
+    while not frontier.isEmpty():
+        Node, Actions, Cost = frontier.pop()
+        if (problem.isGoalState(Node)):
+            return Actions
+        if (Node in visited):
+            continue
+        visited.add(Node)
+        for successor in problem.getSuccessors(Node):
+            sNode, nextAction, nextCost = successor            
+            sActions = Actions + [nextAction]
+            sCost = Cost + nextCost
+            frontier.push((sNode, sActions, sCost))
+
+    return []
+        
+                
 def breadthFirstSearch(problem: SearchProblem):
     """Search the shallowest nodes in the search tree first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+
+    frontier = util.Queue()
+    frontier.push((problem.getStartState(), [], 0))
+    visited = set()
+
+    while not frontier.isEmpty():
+        Node, Actions, Cost = frontier.pop()
+        if (problem.isGoalState(Node)):
+            return Actions
+        if (Node in visited):
+            continue
+        visited.add(Node)
+        for successor in problem.getSuccessors(Node):
+            sNode, nextAction, nextCost = successor            
+            sActions = Actions + [nextAction]
+            sCost = Cost + nextCost
+            frontier.push((sNode, sActions, sCost))
+
+    return []
 
 def uniformCostSearch(problem: SearchProblem):
     """Search the node of least total cost first."""
