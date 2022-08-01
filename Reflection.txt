@@ -1,0 +1,6 @@
+Welp, it was quite a challenge
+Took me a lot of time to understand why get successors wasn't working. THen I figured out the reason: it was returning three different values, so too many things were being unpacked at a time.
+Fixed that by dividing the single "node" variabel that was storing all of that information into 
+three different variables: node (state), action, and cost
+worked out quite well.
+I attempted uniform cost as well, but couldn't figure it out. Will try agian later when I have more exp with python and search.
